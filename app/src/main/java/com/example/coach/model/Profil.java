@@ -1,6 +1,8 @@
 package com.example.coach.model;
 
 
+import java.util.Date;
+
 public class Profil {
     // Constantes
     private static final int MIN_FEMME = 25;
@@ -19,13 +21,17 @@ public class Profil {
     private double img;
     private int indice;
 
+    private Date dateMesure;
+
 
     // Constructeur
-    public Profil(Integer poids, Integer taille, Integer age, Integer sexe) {
+    public Profil(Integer poids, Integer taille, Integer age, Integer sexe, Date date) {
         this.poids = poids;
         this.taille = taille;
         this.age = age;
         this.sexe = sexe;
+        this.dateMesure = dateMesure;
+
         this.img = calculImg();
         this.indice = calculIndice();
 
@@ -77,4 +83,25 @@ public class Profil {
     public boolean normal() {
         return indice == 1;
     }
+
+    public Integer getPoids() {
+        return poids;
+    }
+
+    public Integer getTaille() {
+        return taille;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public Integer getSexe() {
+        return sexe;
+    }
+    public Date getDateMesure() {
+        return dateMesure;
+    }
+
+
 }

@@ -3,6 +3,8 @@ package com.example.coach.presenter;
 import com.example.coach.contract.ICalculView;
 import com.example.coach.model.Profil;
 
+import java.util.Date;
+
 public class CalculPresenter {
 
     // Référence vers la vue (pour appeler afficherResultat)
@@ -15,7 +17,7 @@ public class CalculPresenter {
 
     // Création du profil à partir des saisies + affichage du résultat
     public void creerProfil(Integer poids, Integer taille, Integer age, Integer sexe) {
-        Profil profil = new Profil(poids, taille, age, sexe);
+        Profil profil = new Profil(poids, taille, age, sexe, new Date());
 
         vue.afficherResultat(
                 profil.getImage(),
