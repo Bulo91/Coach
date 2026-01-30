@@ -30,7 +30,7 @@ public class Profil {
         this.taille = taille;
         this.age = age;
         this.sexe = sexe;
-        this.dateMesure = dateMesure;
+        this.dateMesure = date;
 
         this.img = calculImg();
         this.indice = calculIndice();

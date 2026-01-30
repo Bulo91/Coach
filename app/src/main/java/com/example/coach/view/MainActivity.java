@@ -20,7 +20,6 @@ import com.example.coach.contract.ICalculView;
 import com.example.coach.presenter.CalculPresenter;
 
 public class MainActivity extends AppCompatActivity implements ICalculView {
-
     // Zones de saisie
     private EditText txtPoids;
     private EditText txtTaille;
@@ -41,6 +40,9 @@ public class MainActivity extends AppCompatActivity implements ICalculView {
     private CalculPresenter presenter;
 
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements ICalculView {
 
 
     @Override
-    public void afficherResultat(String message, double img, String image, boolean normal) {
+    public void afficherResultat(String image, double img, String message, boolean normal) {
 
         // 4E1 - Affichage de l'image
         int imageId = getResources().getIdentifier(image, "drawable", getPackageName());
@@ -97,7 +99,8 @@ public class MainActivity extends AppCompatActivity implements ICalculView {
 
     private void init() {
         chargeObjetsGraphiques();
-        presenter = new CalculPresenter(this);
+        presenter = new CalculPresenter(this, this);
+        presenter.chargerProfil();
         btnCalc.setOnClickListener(v -> btnCalc_clic());
 
     }
