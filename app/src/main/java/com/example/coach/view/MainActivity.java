@@ -97,7 +97,8 @@ public class MainActivity extends AppCompatActivity implements ICalculView {
 
     private void init() {
         chargeObjetsGraphiques();
-        presenter = new CalculPresenter(this);
+        presenter = new CalculPresenter(this, this);
+        presenter.chargerDernierProfil();
         btnCalc.setOnClickListener(v -> btnCalc_clic());
 
     }
