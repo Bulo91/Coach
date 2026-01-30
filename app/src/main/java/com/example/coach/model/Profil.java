@@ -18,8 +18,8 @@ public class Profil {
     private Integer age;
     private Integer sexe;
 
-    private double img;
-    private int indice;
+    private transient double img;
+    private transient int indice;
 
     private Date dateMesure;
 
@@ -30,7 +30,7 @@ public class Profil {
         this.taille = taille;
         this.age = age;
         this.sexe = sexe;
-        this.dateMesure = dateMesure;
+        this.dateMesure = date;
 
         this.img = calculImg();
         this.indice = calculIndice();
