@@ -8,18 +8,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CoachApi {
 
-    // Adresse de l'API (émulateur Android -> 10.0.2.2)
     private static final String API_URL = "http://10.0.2.2/rest_coach/";
-
-    // Objet Retrofit unique (style singleton)
     private static Retrofit retrofit = null;
 
-    // Gson avec format de date compatible MySQL DATETIME
-    private static Gson gson = new GsonBuilder()
+    private static final Gson gson = new GsonBuilder()
             .setDateFormat("yyyy-MM-dd HH:mm:ss")
             .create();
 
-    // Construction / récupération unique de Retrofit
     public static Retrofit getRetrofit() {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
@@ -30,7 +25,6 @@ public class CoachApi {
         return retrofit;
     }
 
-    // Getter sur gson (utilisé ailleurs pour convertir avant envoi)
     public static Gson getGson() {
         return gson;
     }
